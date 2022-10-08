@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script type="text/javascript" src="common.js"></script>
+    <title>Exclusion</title>
+    <style>
+      #container{
+        width:100%;
+      }
+
+      .flex-item-full {
+        flex:1;
+      }
+
+      div{
+        border: 1px solid red;
+      }
+
+      .flex-ctn{
+        display: flex;
+      }
+
+      .right{
+        margin-left: auto;
+      }
+
+      table,th,td {
+        border: 1px solid hsl(59, 53%, 72%);
+        padding: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="flex-ctn header flex-item-full">
+        <div class="left">
+          <p>
+            HSBC Contental Europe</p>
+            CLCM - Corporate Loan Collateral Manager
+          <p>Manual Exclusions</p>
+        </div>
+        <div class="right">
+
+          Menu
+        </div>
+      </div>
+      <div class="content flex-item-full">
+        <form [formGroup]="loanForm" formControlName="typicalExclusion">
+          <div class="form">
+            Typical Exclusion <select formControlName="typicalExclusion" id="">
+              
+              
+              <option value="LOANID">LOANID</option>
+
+            </select>
+            <br>
+            <label>Loan ID:  </label>
+            <input type="text" formControlName="loanId">
+          </div>
+        </form>
+        
+
+
+      </div>
+      <div class="action flex-item-full flex-ctn">
+        <div class="action-btn-wrap right">
+          <button (click)="exit()">Exit</button>
+          <button (click)="cancel()">Cancel</button>
+          <button (click)="validate()">Validate</button>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
